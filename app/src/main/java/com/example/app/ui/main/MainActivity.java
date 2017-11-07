@@ -25,17 +25,17 @@ public class MainActivity extends ViewModelActivity {
   @Nullable
   @Override
   protected ViewModel createViewModel(@Nullable ViewModel.State savedViewModelState) {
-    viewModel = new MainViewModel(savedViewModelState);
+    viewModel = new MainViewModel(getActivityComponent(), savedViewModelState);
     return viewModel;
   }
 
   @OnClick(R.id.a_main_btn_clicks)
   public void onClickBtnClicks() {
-    viewModel.onClickBtnClicks(this);
+    viewModel.onClickBtnClicks();
   }
 
   @OnClick(R.id.a_main_btn_recycler)
   public void onClickBtnRecycler() {
-    viewModel.onClickBtnRecycler(this);
+    viewModel.onClickBtnRecycler();
   }
 }

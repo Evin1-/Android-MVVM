@@ -1,8 +1,11 @@
 package com.example.mylibrary.recycler;
 
 import android.databinding.ViewDataBinding;
+import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.example.mylibrary.di.ActivityComponent;
 
 import java.util.ArrayList;
 
@@ -14,9 +17,15 @@ public abstract class RecyclerViewAdapter<ITEM_T, VIEW_MODEL_T extends ItemViewM
     extends RecyclerView.Adapter<RecyclerViewAdapter.ItemViewHolder<ITEM_T, VIEW_MODEL_T>> {
 
   protected final ArrayList<ITEM_T> items;
+  private final ActivityComponent activityComponent;
 
-  public RecyclerViewAdapter() {
+  public RecyclerViewAdapter(@NonNull ActivityComponent activityComponent) {
+    this.activityComponent = activityComponent;
     items = new ArrayList<>();
+  }
+
+  public ActivityComponent getActivityComponent() {
+    return activityComponent;
   }
 
   @Override

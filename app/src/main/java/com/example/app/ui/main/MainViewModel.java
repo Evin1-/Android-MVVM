@@ -1,11 +1,10 @@
 package com.example.app.ui.main;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.support.annotation.Nullable;
 
 import com.example.app.ui.clicks.ClickCountActivity;
 import com.example.app.ui.versions.AndroidVersionsActivity;
+import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.viewmodel.ViewModel;
 
 /**
@@ -13,27 +12,20 @@ import com.example.mylibrary.viewmodel.ViewModel;
  */
 
 public class MainViewModel extends ViewModel {
-  public MainViewModel(@Nullable State savedInstanceState) {
-    super(savedInstanceState);
+  public MainViewModel(ActivityComponent activityComponent, @Nullable State savedInstanceState) {
+    super(activityComponent, savedInstanceState);
   }
 
-  public void onClickBtnClicks(Activity activity) {
-    final Intent intent = new Intent(activity, ClickCountActivity.class);
-    activity.startActivity(intent);
+  public void onClickBtnClicks() {
+    attachedActivity.startActivity(ClickCountActivity.class);
   }
 
-  public void onClickBtnRecycler(Activity activity) {
-    // TODO: 11/1/17
-    final Intent intent = new Intent(activity, AndroidVersionsActivity.class);
-    activity.startActivity(intent);
+  public void onClickBtnRecycler() {
+    attachedActivity.startActivity(AndroidVersionsActivity.class);
   }
 
-  public void onClickHiBrianLee(Activity activity) {
-    try {
-      Intent intent = Intent.parseUri("https://www.twitter.com/evin1_", 0);
-      activity.startActivity(intent);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+  public void onClickHiBrianLee() {
+    // TODO
+    // attachedActivity.openUrl(activity.getString(R.string.twitter_url));
   }
 }

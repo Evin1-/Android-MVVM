@@ -1,9 +1,11 @@
 package com.example.app.ui.versions;
 
 import android.databinding.Bindable;
+import android.support.annotation.NonNull;
 
 import com.example.app.BR;
 import com.example.app.data.entities.AndroidVersion;
+import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.recycler.ItemViewModel;
 
 /**
@@ -13,6 +15,10 @@ import com.example.mylibrary.recycler.ItemViewModel;
 public class AndroidVersionItemViewModel extends ItemViewModel<AndroidVersion> {
 
   private AndroidVersion androidVersion;
+
+  public AndroidVersionItemViewModel(@NonNull ActivityComponent activityComponent) {
+    super(activityComponent);
+  }
 
   @Override
   public void setItem(AndroidVersion item) {

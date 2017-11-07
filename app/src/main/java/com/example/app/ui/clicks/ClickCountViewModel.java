@@ -8,6 +8,7 @@ import android.os.Parcel;
 import android.support.annotation.Nullable;
 
 import com.example.app.BR;
+import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.viewmodel.ViewModel;
 
 /**
@@ -20,8 +21,8 @@ public class ClickCountViewModel extends ViewModel {
 
   int clicks;
 
-  public ClickCountViewModel(Context context, @Nullable State savedInstanceState) {
-    super(savedInstanceState);
+  public ClickCountViewModel(Context context, ActivityComponent activityComponent, @Nullable State savedInstanceState) {
+    super(activityComponent, savedInstanceState);
     appContext = context.getApplicationContext();
     if (savedInstanceState instanceof ClickCountState) {
       clicks = ((ClickCountState) savedInstanceState).clicks;

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.app.R;
 import com.example.app.data.entities.AndroidVersion;
+import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.recycler.RecyclerViewAdapter;
 import com.example.mylibrary.recycler.RecyclerViewViewModel;
 
@@ -22,11 +23,10 @@ import java.util.ArrayList;
 public class AndroidVersionsViewModel extends RecyclerViewViewModel {
 
   private final Context appContext;
+  private AndroidVersionsAdapter adapter;
 
-  AndroidVersionsAdapter adapter;
-
-  public AndroidVersionsViewModel(Context context, @Nullable State savedInstanceState) {
-    super(savedInstanceState);
+  public AndroidVersionsViewModel(Context context, ActivityComponent activityComponent, @Nullable State savedInstanceState) {
+    super(activityComponent, savedInstanceState);
     appContext = context.getApplicationContext();
 
     ArrayList<AndroidVersion> versions;
@@ -35,7 +35,7 @@ public class AndroidVersionsViewModel extends RecyclerViewViewModel {
     } else {
       versions = getVersions();
     }
-    adapter = new AndroidVersionsAdapter();
+    adapter = new AndroidVersionsAdapter(activityComponent);
     adapter.setItems(versions);
   }
 

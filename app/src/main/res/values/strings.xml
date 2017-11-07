@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">App</string>
     <string name="twitter_handle">Evin1-</string>
+    <string name="button_clicks">Button Clicks</string>
+    <string name="android_versions">Android Versions</string>
 </resources>

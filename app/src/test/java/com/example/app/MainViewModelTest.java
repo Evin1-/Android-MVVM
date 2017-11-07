@@ -1,6 +1,5 @@
 package com.example.app;
 
-import android.app.Activity;
 import android.content.Intent;
 
 import com.example.app.ui.clicks.ClickCountActivity;
@@ -27,7 +26,7 @@ public class MainViewModelTest extends Assert {
   @Before
   public void setup() {
     activity = mock(MainActivity.class);
-    viewModel = new MainViewModel(null);
+    viewModel = new MainViewModel(getActivityComponent(), null);
   }
 
   @Test

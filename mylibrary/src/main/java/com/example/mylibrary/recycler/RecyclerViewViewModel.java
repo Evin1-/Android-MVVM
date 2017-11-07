@@ -5,6 +5,7 @@ import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 
+import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.viewmodel.ViewModel;
 
 /**
@@ -13,15 +14,15 @@ import com.example.mylibrary.viewmodel.ViewModel;
 
 public abstract class RecyclerViewViewModel extends ViewModel {
 
-  RecyclerView.LayoutManager layoutManager;
+  private RecyclerView.LayoutManager layoutManager;
   private Parcelable savedLayoutManagerState;
 
   protected abstract RecyclerViewAdapter getAdapter();
 
   protected abstract RecyclerView.LayoutManager createLayoutManager();
 
-  public RecyclerViewViewModel(@Nullable State savedInstanceState) {
-    super(savedInstanceState);
+  public RecyclerViewViewModel(ActivityComponent activityComponent, @Nullable State savedInstanceState) {
+    super(activityComponent, savedInstanceState);
     if (savedInstanceState instanceof RecyclerViewViewModelState) {
       savedLayoutManagerState =
           ((RecyclerViewViewModelState) savedInstanceState).layoutManagerState;
@@ -33,7 +34,7 @@ public abstract class RecyclerViewViewModel extends ViewModel {
     return new RecyclerViewViewModelState(this);
   }
 
-  public final void setupRecyclerView(RecyclerView recyclerView) {
+  final void setupRecyclerView(RecyclerView recyclerView) {
     layoutManager = createLayoutManager();
     if (savedLayoutManagerState != null) {
       layoutManager.onRestoreInstanceState(savedLayoutManagerState);
