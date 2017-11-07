@@ -1,1 +1,1 @@
-include ':app-robolectric', ':mylibrary', ':app'
+include ':mylibrary', ':app'

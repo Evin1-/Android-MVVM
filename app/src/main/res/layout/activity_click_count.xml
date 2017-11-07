@@ -2,13 +2,13 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.app.ClickCountActivity">
+    tools:context=".ui.clicks.ClickCountActivity">
 
     <data>
 
         <variable
             name="viewModel"
-            type="com.example.app.ClickCountViewModel" />
+            type="com.example.app.ui.clicks.ClickCountViewModel" />
     </data>
 
     <android.support.constraint.ConstraintLayout
