@@ -1,7 +1,7 @@
 package com.example.app.ui.main;
 
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.example.app.R;
 import com.example.mylibrary.viewmodel.ViewModel;

@@ -8,7 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.example.app.R;
 import com.example.app.data.entities.AndroidVersion;
 import com.example.mylibrary.di.ActivityComponent;
 import com.example.mylibrary.recycler.RecyclerViewAdapter;

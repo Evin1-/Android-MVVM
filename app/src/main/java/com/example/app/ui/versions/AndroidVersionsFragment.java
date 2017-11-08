@@ -31,13 +31,6 @@ public class AndroidVersionsFragment extends ViewModelFragment {
     return root;
   }
 
-//  @Nullable
-//  @Override
-//  protected ViewModel createViewModel(@Nullable ViewModel.State savedViewModelState) {
-//    androidVersionsViewModel = new AndroidVersionsViewModel(getContext(), savedViewModelState);
-//    return androidVersionsViewModel;
-//  }
-
   @Nullable
   @Override
   protected ViewModel createAndBindViewModel(View root,

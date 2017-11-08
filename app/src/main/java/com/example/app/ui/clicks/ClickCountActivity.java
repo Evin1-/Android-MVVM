@@ -1,8 +1,8 @@
 package com.example.app.ui.clicks;
 
 import android.databinding.DataBindingUtil;
-import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 
 import com.example.app.R;
 import com.example.app.databinding.ActivityClickCountBinding;
